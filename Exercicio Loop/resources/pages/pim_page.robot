@@ -1,5 +1,6 @@
 *** Settings ***
 Resource    ../main.robot
+Library    FakerLibrary
 
 
 *** Variables ***
@@ -16,11 +17,11 @@ Resource    ../main.robot
 
 *** Keywords ***
 E eu adicione um novo usuario
-    Wait Until Element Is Visible    ${pim.button_pim}                       10
+    Wait Until Element Is Visible    ${pim.button_pim}                       10s
     Click Element                    ${pim.button_pim}
-    Wait Until Element Is Visible    ${pim.button_add}                       20
+    Wait Until Element Is Visible    ${pim.button_add}                       20s
     Click Element                    ${pim.button_add}
-    Wait Until Element Is Visible    ${pim.input_firstName}                  20
+    Wait Until Element Is Visible    ${pim.input_firstName}                  20s
     Input Text                       ${pim.input_firstName}                  ${new_user.first_name}
     Input Text                       ${pim.input_middleName}                 ${new_user.middle_name}
     Input Text                       ${pim.input_lastName}                   ${new_user.last_name}
@@ -39,11 +40,29 @@ E clique em "Add Employee"
 
 Então adiciono ${quantidade} novos usuários
     FOR    ${i}    IN RANGE    ${quantidade}
-        Wait Until Element Is Visible    ${pim.input_firstName}                  20
-        Input Text                       ${pim.input_firstName}                  ${new_user.first_name}    ${i}
-        Input Text                       ${pim.input_middleName}                 ${new_user.middle_name}
-        Input Text                       ${pim.input_lastName}                   ${new_user.last_name}
+        Wait Until Element Is Visible    ${pim.input_firstName}
+        ${primeiro_nome}                 FakerLibrary.FirstName
+        ${segundo_nome}                  FakerLibrary.LastName
+        ${sobrenome}                     FakerLibrary.LastName
+        Input Text                       ${pim.input_firstName}                  ${primeiro_nome}
+        Input Text                       ${pim.input_middleName}                 ${segundo_nome}
+        Input Text                       ${pim.input_lastName}                   ${sobrenome}
         Click Element                    ${pim.button_save}
         Dado que eu acesse a opção PIM no menu
         E clique em "Add Employee"
     END
+
+
+E eu adicione um novo usuario aleatorio
+    ${nome}                          FakerLibrary.FirstName
+    ${nome_meio}                     FakerLibrary.LastNameFemale
+    ${sobrenome}                     FakerLibrary.LastNameFemale
+    Wait Until Element Is Visible    ${pim.button_pim}                       10
+    Click Element                    ${pim.button_pim}
+    Wait Until Element Is Visible    ${pim.button_add}                       20
+    Click Element                    ${pim.button_add}
+    Wait Until Element Is Visible    ${pim.input_firstName}                  20
+    Input Text                       ${pim.input_firstName}                  ${nome}
+    Input Text                       ${pim.input_middleName}                 ${nome_meio}
+    Input Text                       ${pim.input_lastName}                   ${sobrenome}
+    Click Element                    ${pim.button_save}

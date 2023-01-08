@@ -1,327 +1,699 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.1 (Python 3.11.1 on win32)" generated="20230108 12:19:45.790" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.1 (Python 3.11.1 on win32)" generated="20230108 13:08:33.666" rpa="false" schemaversion="3">
 <suite id="s1" name="Suites" source="C:\Users\acvilar.STEFANINI-DOM\OneDrive - Stefanini\Desktop\RobotFramework\Exercicio Loop\suites">
 <suite id="s1-s1" name="addAndDelete" source="C:\Users\acvilar.STEFANINI-DOM\OneDrive - Stefanini\Desktop\RobotFramework\Exercicio Loop\suites\addAndDelete">
 <suite id="s1-s1-s1" name="addAndDelete" source="C:\Users\acvilar.STEFANINI-DOM\OneDrive - Stefanini\Desktop\RobotFramework\Exercicio Loop\suites\addAndDelete\addAndDelete.robot">
-<test id="s1-s1-s1-t1" name="TC02 - Acessar site, fazer login, criar 3 usuários" line="13">
+<test id="s1-s1-s1-t1" name="TC01 - Acessar site, fazer login, criar usuario e deletar" line="8">
 <kw name="Acessar site orange e fazer login" library="setup_teardown" type="SETUP">
 <kw name="Dado que eu acesse o site e faça login" library="login_page">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${geral.URL}</arg>
 <arg>${geral.Browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230108 12:19:46.102" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
-<status status="PASS" starttime="20230108 12:19:46.102" endtime="20230108 12:19:51.012"/>
+<msg timestamp="20230108 13:08:34.385" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<status status="PASS" starttime="20230108 13:08:34.384" endtime="20230108 13:08:39.247"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230108 12:19:51.013" endtime="20230108 12:19:51.132"/>
+<status status="PASS" starttime="20230108 13:08:39.247" endtime="20230108 13:08:39.361"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${login.input_username}</arg>
 <arg>10</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230108 12:19:51.132" endtime="20230108 12:19:51.582"/>
+<status status="PASS" starttime="20230108 13:08:39.361" endtime="20230108 13:08:39.799"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${login.input_username}</arg>
 <arg>${dados_login.username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230108 12:19:51.583" level="INFO">Typing text 'Admin' into text field '//input[@name="username"]'.</msg>
-<status status="PASS" starttime="20230108 12:19:51.582" endtime="20230108 12:19:51.661"/>
+<msg timestamp="20230108 13:08:39.799" level="INFO">Typing text 'Admin' into text field '//input[@name="username"]'.</msg>
+<status status="PASS" starttime="20230108 13:08:39.799" endtime="20230108 13:08:39.880"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${login.input_password}</arg>
 <arg>10</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230108 12:19:51.662" endtime="20230108 12:19:51.692"/>
+<status status="PASS" starttime="20230108 13:08:39.880" endtime="20230108 13:08:39.904"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${login.input_password}</arg>
 <arg>${dados_login.password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230108 12:19:51.693" level="INFO">Typing text 'admin123' into text field '//input[@name="password"]'.</msg>
-<status status="PASS" starttime="20230108 12:19:51.692" endtime="20230108 12:19:51.780"/>
+<msg timestamp="20230108 13:08:39.906" level="INFO">Typing text 'admin123' into text field '//input[@name="password"]'.</msg>
+<status status="PASS" starttime="20230108 13:08:39.904" endtime="20230108 13:08:39.976"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${login.button_login}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230108 12:19:51.781" level="INFO">Clicking button '//button[@type="submit"]'.</msg>
-<status status="PASS" starttime="20230108 12:19:51.780" endtime="20230108 12:19:51.831"/>
+<msg timestamp="20230108 13:08:39.976" level="INFO">Clicking button '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20230108 13:08:39.976" endtime="20230108 13:08:40.016"/>
 </kw>
-<status status="PASS" starttime="20230108 12:19:46.102" endtime="20230108 12:19:51.831"/>
+<status status="PASS" starttime="20230108 13:08:34.383" endtime="20230108 13:08:40.016"/>
 </kw>
-<status status="PASS" starttime="20230108 12:19:46.102" endtime="20230108 12:19:51.831"/>
+<status status="PASS" starttime="20230108 13:08:34.383" endtime="20230108 13:08:40.016"/>
 </kw>
-<kw name="Dado que eu acesse a opção PIM no menu" library="pim_page">
+<kw name="E eu adicione um novo usuario" library="pim_page">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${pim.button_pim}</arg>
-<arg>10</arg>
+<arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230108 12:19:51.832" endtime="20230108 12:19:53.500"/>
+<status status="PASS" starttime="20230108 13:08:40.017" endtime="20230108 13:08:41.742"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${pim.button_pim}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230108 12:19:53.501" level="INFO">Clicking element '//a[@href="/web/index.php/pim/viewPimModule"]'.</msg>
-<status status="PASS" starttime="20230108 12:19:53.500" endtime="20230108 12:19:54.647"/>
+<msg timestamp="20230108 13:08:41.743" level="INFO">Clicking element '//a[@href="/web/index.php/pim/viewPimModule"]'.</msg>
+<status status="PASS" starttime="20230108 13:08:41.742" endtime="20230108 13:08:42.954"/>
 </kw>
-<status status="PASS" starttime="20230108 12:19:51.832" endtime="20230108 12:19:54.647"/>
-</kw>
-<kw name="E clique em &quot;Add Employee&quot;" library="pim_page">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${pim.button_add}</arg>
-<arg>20</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230108 12:19:54.648" endtime="20230108 12:19:55.097"/>
+<status status="PASS" starttime="20230108 13:08:42.955" endtime="20230108 13:08:43.397"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${pim.button_add}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230108 12:19:55.097" level="INFO">Clicking element '//button[@class="oxd-button oxd-button--medium oxd-button--secondary"]'.</msg>
-<status status="PASS" starttime="20230108 12:19:55.097" endtime="20230108 12:19:55.991"/>
+<msg timestamp="20230108 13:08:43.398" level="INFO">Clicking element '//button[@class="oxd-button oxd-button--medium oxd-button--secondary"]'.</msg>
+<status status="PASS" starttime="20230108 13:08:43.397" endtime="20230108 13:08:44.180"/>
 </kw>
-<status status="PASS" starttime="20230108 12:19:54.647" endtime="20230108 12:19:55.991"/>
-</kw>
-<kw name="Então adiciono 3 novos usuários" library="pim_page" sourcename="Então adiciono ${Quantidade} novos usuários">
-<for flavor="IN RANGE">
-<var>${i}</var>
-<value>${Quantidade}</value>
-<iter>
-<var name="${i}">0</var>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${pim.input_firstName}</arg>
-<arg>20</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230108 12:19:55.993" endtime="20230108 12:19:56.442"/>
+<status status="PASS" starttime="20230108 13:08:44.180" endtime="20230108 13:08:44.632"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${pim.input_firstName}</arg>
 <arg>${new_user.first_name}</arg>
-<arg>${i}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230108 12:19:56.443" level="INFO">Typing text 'Meredith' into text field '//input[@name="firstName"]'.</msg>
-<status status="PASS" starttime="20230108 12:19:56.442" endtime="20230108 12:19:56.531"/>
+<msg timestamp="20230108 13:08:44.634" level="INFO">Typing text 'Meredith' into text field '//input[@name="firstName"]'.</msg>
+<status status="PASS" starttime="20230108 13:08:44.632" endtime="20230108 13:08:44.711"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${pim.input_middleName}</arg>
 <arg>${new_user.middle_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230108 12:19:56.533" level="INFO">Typing text 'Silva' into text field '//input[@name="middleName"]'.</msg>
-<status status="PASS" starttime="20230108 12:19:56.531" endtime="20230108 12:19:56.620"/>
+<msg timestamp="20230108 13:08:44.713" level="INFO">Typing text 'Silva' into text field '//input[@name="middleName"]'.</msg>
+<status status="PASS" starttime="20230108 13:08:44.711" endtime="20230108 13:08:44.781"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${pim.input_lastName}</arg>
 <arg>${new_user.last_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230108 12:19:56.621" level="INFO">Typing text 'Grey' into text field '//input[@name="lastName"]'.</msg>
-<status status="PASS" starttime="20230108 12:19:56.620" endtime="20230108 12:19:56.693"/>
+<msg timestamp="20230108 13:08:44.783" level="INFO">Typing text 'Grey' into text field '//input[@name="lastName"]'.</msg>
+<status status="PASS" starttime="20230108 13:08:44.782" endtime="20230108 13:08:44.864"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${pim.button_save}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230108 12:19:56.694" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
-<status status="PASS" starttime="20230108 12:19:56.693" endtime="20230108 12:19:57.303"/>
+<msg timestamp="20230108 13:08:44.864" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20230108 13:08:44.864" endtime="20230108 13:08:45.536"/>
+</kw>
+<status status="PASS" starttime="20230108 13:08:40.017" endtime="20230108 13:08:45.536"/>
+</kw>
+<kw name="E eu pesquise e delete o usuario criado" library="employee_list">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${list.employee_list}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230108 13:08:45.538" endtime="20230108 13:08:45.563"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${list.employee_list}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230108 13:08:45.563" level="INFO">Clicking element '//a[contains(text(), "Employee List")]'.</msg>
+<status status="PASS" starttime="20230108 13:08:45.563" endtime="20230108 13:08:46.127"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${list.employee_name}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230108 13:08:46.127" endtime="20230108 13:08:46.575"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${list.employee_name}</arg>
+<arg>${new_user.first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230108 13:08:46.577" level="INFO">Typing text 'Meredith' into text field '(//input[@placeholder="Type for hints..."])[1]'.</msg>
+<status status="PASS" starttime="20230108 13:08:46.575" endtime="20230108 13:08:46.673"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${list.button_search}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230108 13:08:46.673" endtime="20230108 13:08:46.695"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${list.button_search}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230108 13:08:46.696" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20230108 13:08:46.695" endtime="20230108 13:08:46.736"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${list.button_delete}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230108 13:08:46.736" endtime="20230108 13:08:47.604"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${list.button_delete}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230108 13:08:47.604" level="INFO">Clicking element '//i[@class="oxd-icon bi-trash"]'.</msg>
+<status status="PASS" starttime="20230108 13:08:47.604" endtime="20230108 13:08:47.649"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${list.button_confirm_delete}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230108 13:08:47.650" endtime="20230108 13:08:47.899"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${list.button_confirm_delete}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230108 13:08:47.900" level="INFO">Clicking element '//button[@class="oxd-button oxd-button--medium oxd-button--label-danger orangehrm-button-margin"]'.</msg>
+<status status="PASS" starttime="20230108 13:08:47.900" endtime="20230108 13:08:47.952"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${list.no_records_found}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230108 13:08:47.952" endtime="20230108 13:08:51.333"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${list.no_records_found}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230108 13:08:51.349" level="INFO">Element '//span[@class="oxd-text oxd-text--span"]' is displayed.</msg>
+<status status="PASS" starttime="20230108 13:08:51.333" endtime="20230108 13:08:51.349"/>
+</kw>
+<status status="PASS" starttime="20230108 13:08:45.538" endtime="20230108 13:08:51.349"/>
+</kw>
+<kw name="Fechar navegador" library="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230108 13:08:51.350" endtime="20230108 13:08:53.788"/>
+</kw>
+<status status="PASS" starttime="20230108 13:08:51.350" endtime="20230108 13:08:53.788"/>
+</kw>
+<tag>TC01 Login Create Delete</tag>
+<status status="PASS" starttime="20230108 13:08:34.376" endtime="20230108 13:08:53.788"/>
+</test>
+<test id="s1-s1-s1-t2" name="TC02 - Acessar site, fazer login, criar 3 usuários" line="13">
+<kw name="Acessar site orange e fazer login" library="setup_teardown" type="SETUP">
+<kw name="Dado que eu acesse o site e faça login" library="login_page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${geral.URL}</arg>
+<arg>${geral.Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230108 13:08:53.791" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<status status="PASS" starttime="20230108 13:08:53.790" endtime="20230108 13:08:58.818"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230108 13:08:58.818" endtime="20230108 13:08:58.940"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.input_username}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230108 13:08:58.940" endtime="20230108 13:08:59.383"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login.input_username}</arg>
+<arg>${dados_login.username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230108 13:08:59.384" level="INFO">Typing text 'Admin' into text field '//input[@name="username"]'.</msg>
+<status status="PASS" starttime="20230108 13:08:59.383" endtime="20230108 13:08:59.454"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.input_password}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230108 13:08:59.454" endtime="20230108 13:08:59.474"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login.input_password}</arg>
+<arg>${dados_login.password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230108 13:08:59.476" level="INFO">Typing text 'admin123' into text field '//input[@name="password"]'.</msg>
+<status status="PASS" starttime="20230108 13:08:59.474" endtime="20230108 13:08:59.556"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login.button_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230108 13:08:59.558" level="INFO">Clicking button '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20230108 13:08:59.556" endtime="20230108 13:08:59.608"/>
+</kw>
+<status status="PASS" starttime="20230108 13:08:53.790" endtime="20230108 13:08:59.608"/>
+</kw>
+<status status="PASS" starttime="20230108 13:08:53.790" endtime="20230108 13:08:59.608"/>
 </kw>
 <kw name="Dado que eu acesse a opção PIM no menu" library="pim_page">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${pim.button_pim}</arg>
 <arg>10</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230108 12:19:57.303" endtime="20230108 12:19:57.317"/>
+<status status="PASS" starttime="20230108 13:08:59.608" endtime="20230108 13:09:01.350"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${pim.button_pim}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230108 12:19:57.318" level="INFO">Clicking element '//a[@href="/web/index.php/pim/viewPimModule"]'.</msg>
-<status status="PASS" starttime="20230108 12:19:57.318" endtime="20230108 12:19:58.298"/>
+<msg timestamp="20230108 13:09:01.351" level="INFO">Clicking element '//a[@href="/web/index.php/pim/viewPimModule"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:01.351" endtime="20230108 13:09:02.589"/>
 </kw>
-<status status="PASS" starttime="20230108 12:19:57.303" endtime="20230108 12:19:58.298"/>
+<status status="PASS" starttime="20230108 13:08:59.608" endtime="20230108 13:09:02.589"/>
 </kw>
 <kw name="E clique em &quot;Add Employee&quot;" library="pim_page">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${pim.button_add}</arg>
 <arg>20</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230108 12:19:58.299" endtime="20230108 12:19:58.757"/>
+<status status="PASS" starttime="20230108 13:09:02.590" endtime="20230108 13:09:03.054"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${pim.button_add}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230108 12:19:58.757" level="INFO">Clicking element '//button[@class="oxd-button oxd-button--medium oxd-button--secondary"]'.</msg>
-<status status="PASS" starttime="20230108 12:19:58.757" endtime="20230108 12:19:59.370"/>
+<msg timestamp="20230108 13:09:03.056" level="INFO">Clicking element '//button[@class="oxd-button oxd-button--medium oxd-button--secondary"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:03.055" endtime="20230108 13:09:03.953"/>
 </kw>
-<status status="PASS" starttime="20230108 12:19:58.298" endtime="20230108 12:19:59.370"/>
+<status status="PASS" starttime="20230108 13:09:02.590" endtime="20230108 13:09:03.953"/>
 </kw>
-<status status="PASS" starttime="20230108 12:19:55.992" endtime="20230108 12:19:59.370"/>
+<kw name="Então adiciono 3 novos usuários" library="pim_page" sourcename="Então adiciono ${quantidade} novos usuários">
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>${quantidade}</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${pim.input_firstName}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230108 13:09:03.954" endtime="20230108 13:09:04.402"/>
+</kw>
+<kw name="First Name" library="FakerLibrary">
+<var>${primeiro_nome}</var>
+<msg timestamp="20230108 13:09:04.402" level="INFO">${primeiro_nome} = Mary</msg>
+<status status="PASS" starttime="20230108 13:09:04.402" endtime="20230108 13:09:04.402"/>
+</kw>
+<kw name="Last Name" library="FakerLibrary">
+<var>${segundo_nome}</var>
+<msg timestamp="20230108 13:09:04.403" level="INFO">${segundo_nome} = Proctor</msg>
+<status status="PASS" starttime="20230108 13:09:04.402" endtime="20230108 13:09:04.403"/>
+</kw>
+<kw name="Last Name" library="FakerLibrary">
+<var>${sobrenome}</var>
+<msg timestamp="20230108 13:09:04.403" level="INFO">${sobrenome} = Gutierrez</msg>
+<status status="PASS" starttime="20230108 13:09:04.403" endtime="20230108 13:09:04.403"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${pim.input_firstName}</arg>
+<arg>${primeiro_nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230108 13:09:04.404" level="INFO">Typing text 'Mary' into text field '//input[@name="firstName"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:04.403" endtime="20230108 13:09:04.486"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${pim.input_middleName}</arg>
+<arg>${segundo_nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230108 13:09:04.487" level="INFO">Typing text 'Proctor' into text field '//input[@name="middleName"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:04.486" endtime="20230108 13:09:04.562"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${pim.input_lastName}</arg>
+<arg>${sobrenome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230108 13:09:04.563" level="INFO">Typing text 'Gutierrez' into text field '//input[@name="lastName"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:04.562" endtime="20230108 13:09:04.637"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${pim.button_save}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230108 13:09:04.638" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:04.637" endtime="20230108 13:09:05.298"/>
+</kw>
+<kw name="Dado que eu acesse a opção PIM no menu" library="pim_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${pim.button_pim}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230108 13:09:05.300" endtime="20230108 13:09:05.313"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${pim.button_pim}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230108 13:09:05.314" level="INFO">Clicking element '//a[@href="/web/index.php/pim/viewPimModule"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:05.314" endtime="20230108 13:09:06.274"/>
+</kw>
+<status status="PASS" starttime="20230108 13:09:05.299" endtime="20230108 13:09:06.275"/>
+</kw>
+<kw name="E clique em &quot;Add Employee&quot;" library="pim_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${pim.button_add}</arg>
+<arg>20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230108 13:09:06.275" endtime="20230108 13:09:06.717"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${pim.button_add}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230108 13:09:06.718" level="INFO">Clicking element '//button[@class="oxd-button oxd-button--medium oxd-button--secondary"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:06.718" endtime="20230108 13:09:07.608"/>
+</kw>
+<status status="PASS" starttime="20230108 13:09:06.275" endtime="20230108 13:09:07.608"/>
+</kw>
+<status status="PASS" starttime="20230108 13:09:03.954" endtime="20230108 13:09:07.608"/>
 </iter>
 <iter>
 <var name="${i}">1</var>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${pim.input_firstName}</arg>
-<arg>20</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230108 12:19:59.370" endtime="20230108 12:19:59.812"/>
+<status status="PASS" starttime="20230108 13:09:07.609" endtime="20230108 13:09:08.049"/>
+</kw>
+<kw name="First Name" library="FakerLibrary">
+<var>${primeiro_nome}</var>
+<msg timestamp="20230108 13:09:08.051" level="INFO">${primeiro_nome} = Amanda</msg>
+<status status="PASS" starttime="20230108 13:09:08.049" endtime="20230108 13:09:08.051"/>
+</kw>
+<kw name="Last Name" library="FakerLibrary">
+<var>${segundo_nome}</var>
+<msg timestamp="20230108 13:09:08.051" level="INFO">${segundo_nome} = Johnson</msg>
+<status status="PASS" starttime="20230108 13:09:08.051" endtime="20230108 13:09:08.051"/>
+</kw>
+<kw name="Last Name" library="FakerLibrary">
+<var>${sobrenome}</var>
+<msg timestamp="20230108 13:09:08.052" level="INFO">${sobrenome} = Cortez</msg>
+<status status="PASS" starttime="20230108 13:09:08.051" endtime="20230108 13:09:08.052"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${pim.input_firstName}</arg>
-<arg>${new_user.first_name}</arg>
-<arg>${i}</arg>
+<arg>${primeiro_nome}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230108 12:19:59.813" level="INFO">Typing text 'Meredith' into text field '//input[@name="firstName"]'.</msg>
-<status status="PASS" starttime="20230108 12:19:59.812" endtime="20230108 12:19:59.895"/>
+<msg timestamp="20230108 13:09:08.053" level="INFO">Typing text 'Amanda' into text field '//input[@name="firstName"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:08.052" endtime="20230108 13:09:08.130"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${pim.input_middleName}</arg>
-<arg>${new_user.middle_name}</arg>
+<arg>${segundo_nome}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230108 12:19:59.896" level="INFO">Typing text 'Silva' into text field '//input[@name="middleName"]'.</msg>
-<status status="PASS" starttime="20230108 12:19:59.895" endtime="20230108 12:19:59.967"/>
+<msg timestamp="20230108 13:09:08.132" level="INFO">Typing text 'Johnson' into text field '//input[@name="middleName"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:08.130" endtime="20230108 13:09:08.195"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${pim.input_lastName}</arg>
-<arg>${new_user.last_name}</arg>
+<arg>${sobrenome}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230108 12:19:59.968" level="INFO">Typing text 'Grey' into text field '//input[@name="lastName"]'.</msg>
-<status status="PASS" starttime="20230108 12:19:59.967" endtime="20230108 12:20:00.049"/>
+<msg timestamp="20230108 13:09:08.196" level="INFO">Typing text 'Cortez' into text field '//input[@name="lastName"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:08.195" endtime="20230108 13:09:08.261"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${pim.button_save}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230108 12:20:00.050" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
-<status status="PASS" starttime="20230108 12:20:00.049" endtime="20230108 12:20:00.713"/>
+<msg timestamp="20230108 13:09:08.262" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:08.261" endtime="20230108 13:09:08.940"/>
 </kw>
 <kw name="Dado que eu acesse a opção PIM no menu" library="pim_page">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${pim.button_pim}</arg>
 <arg>10</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230108 12:20:00.714" endtime="20230108 12:20:00.734"/>
+<status status="PASS" starttime="20230108 13:09:08.940" endtime="20230108 13:09:08.955"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${pim.button_pim}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230108 12:20:00.735" level="INFO">Clicking element '//a[@href="/web/index.php/pim/viewPimModule"]'.</msg>
-<status status="PASS" starttime="20230108 12:20:00.734" endtime="20230108 12:20:01.648"/>
+<msg timestamp="20230108 13:09:08.955" level="INFO">Clicking element '//a[@href="/web/index.php/pim/viewPimModule"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:08.955" endtime="20230108 13:09:09.905"/>
 </kw>
-<status status="PASS" starttime="20230108 12:20:00.713" endtime="20230108 12:20:01.648"/>
+<status status="PASS" starttime="20230108 13:09:08.940" endtime="20230108 13:09:09.905"/>
 </kw>
 <kw name="E clique em &quot;Add Employee&quot;" library="pim_page">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${pim.button_add}</arg>
 <arg>20</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230108 12:20:01.649" endtime="20230108 12:20:02.085"/>
+<status status="PASS" starttime="20230108 13:09:09.905" endtime="20230108 13:09:10.356"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${pim.button_add}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230108 12:20:02.086" level="INFO">Clicking element '//button[@class="oxd-button oxd-button--medium oxd-button--secondary"]'.</msg>
-<status status="PASS" starttime="20230108 12:20:02.085" endtime="20230108 12:20:02.744"/>
+<msg timestamp="20230108 13:09:10.357" level="INFO">Clicking element '//button[@class="oxd-button oxd-button--medium oxd-button--secondary"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:10.356" endtime="20230108 13:09:11.287"/>
 </kw>
-<status status="PASS" starttime="20230108 12:20:01.648" endtime="20230108 12:20:02.744"/>
+<status status="PASS" starttime="20230108 13:09:09.905" endtime="20230108 13:09:11.288"/>
 </kw>
-<status status="PASS" starttime="20230108 12:19:59.370" endtime="20230108 12:20:02.744"/>
+<status status="PASS" starttime="20230108 13:09:07.609" endtime="20230108 13:09:11.288"/>
 </iter>
 <iter>
 <var name="${i}">2</var>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${pim.input_firstName}</arg>
-<arg>20</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230108 12:20:02.744" endtime="20230108 12:20:03.190"/>
+<status status="PASS" starttime="20230108 13:09:11.288" endtime="20230108 13:09:11.731"/>
+</kw>
+<kw name="First Name" library="FakerLibrary">
+<var>${primeiro_nome}</var>
+<msg timestamp="20230108 13:09:11.731" level="INFO">${primeiro_nome} = Ellen</msg>
+<status status="PASS" starttime="20230108 13:09:11.731" endtime="20230108 13:09:11.731"/>
+</kw>
+<kw name="Last Name" library="FakerLibrary">
+<var>${segundo_nome}</var>
+<msg timestamp="20230108 13:09:11.732" level="INFO">${segundo_nome} = Kelly</msg>
+<status status="PASS" starttime="20230108 13:09:11.731" endtime="20230108 13:09:11.732"/>
+</kw>
+<kw name="Last Name" library="FakerLibrary">
+<var>${sobrenome}</var>
+<msg timestamp="20230108 13:09:11.732" level="INFO">${sobrenome} = Robles</msg>
+<status status="PASS" starttime="20230108 13:09:11.732" endtime="20230108 13:09:11.732"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${pim.input_firstName}</arg>
-<arg>${new_user.first_name}</arg>
-<arg>${i}</arg>
+<arg>${primeiro_nome}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230108 12:20:03.192" level="INFO">Typing text 'Meredith' into text field '//input[@name="firstName"]'.</msg>
-<status status="PASS" starttime="20230108 12:20:03.191" endtime="20230108 12:20:03.285"/>
+<msg timestamp="20230108 13:09:11.734" level="INFO">Typing text 'Ellen' into text field '//input[@name="firstName"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:11.732" endtime="20230108 13:09:11.814"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${pim.input_middleName}</arg>
-<arg>${new_user.middle_name}</arg>
+<arg>${segundo_nome}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230108 12:20:03.286" level="INFO">Typing text 'Silva' into text field '//input[@name="middleName"]'.</msg>
-<status status="PASS" starttime="20230108 12:20:03.285" endtime="20230108 12:20:03.349"/>
+<msg timestamp="20230108 13:09:11.814" level="INFO">Typing text 'Kelly' into text field '//input[@name="middleName"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:11.814" endtime="20230108 13:09:11.889"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${pim.input_lastName}</arg>
-<arg>${new_user.last_name}</arg>
+<arg>${sobrenome}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230108 12:20:03.350" level="INFO">Typing text 'Grey' into text field '//input[@name="lastName"]'.</msg>
-<status status="PASS" starttime="20230108 12:20:03.350" endtime="20230108 12:20:03.414"/>
+<msg timestamp="20230108 13:09:11.889" level="INFO">Typing text 'Robles' into text field '//input[@name="lastName"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:11.889" endtime="20230108 13:09:11.949"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${pim.button_save}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230108 12:20:03.415" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
-<status status="PASS" starttime="20230108 12:20:03.414" endtime="20230108 12:20:04.150"/>
+<msg timestamp="20230108 13:09:11.950" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:11.950" endtime="20230108 13:09:12.790"/>
 </kw>
 <kw name="Dado que eu acesse a opção PIM no menu" library="pim_page">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${pim.button_pim}</arg>
 <arg>10</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230108 12:20:04.150" endtime="20230108 12:20:04.162"/>
+<status status="PASS" starttime="20230108 13:09:12.790" endtime="20230108 13:09:12.809"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${pim.button_pim}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230108 12:20:04.163" level="INFO">Clicking element '//a[@href="/web/index.php/pim/viewPimModule"]'.</msg>
-<status status="PASS" starttime="20230108 12:20:04.163" endtime="20230108 12:20:05.100"/>
+<msg timestamp="20230108 13:09:12.810" level="INFO">Clicking element '//a[@href="/web/index.php/pim/viewPimModule"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:12.809" endtime="20230108 13:09:14.570"/>
 </kw>
-<status status="PASS" starttime="20230108 12:20:04.150" endtime="20230108 12:20:05.100"/>
+<status status="PASS" starttime="20230108 13:09:12.790" endtime="20230108 13:09:14.570"/>
 </kw>
 <kw name="E clique em &quot;Add Employee&quot;" library="pim_page">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${pim.button_add}</arg>
 <arg>20</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230108 12:20:05.100" endtime="20230108 12:20:05.547"/>
+<status status="PASS" starttime="20230108 13:09:14.571" endtime="20230108 13:09:15.067"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${pim.button_add}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230108 12:20:05.548" level="INFO">Clicking element '//button[@class="oxd-button oxd-button--medium oxd-button--secondary"]'.</msg>
-<status status="PASS" starttime="20230108 12:20:05.547" endtime="20230108 12:20:06.379"/>
+<msg timestamp="20230108 13:09:15.068" level="INFO">Clicking element '//button[@class="oxd-button oxd-button--medium oxd-button--secondary"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:15.067" endtime="20230108 13:09:16.019"/>
 </kw>
-<status status="PASS" starttime="20230108 12:20:05.100" endtime="20230108 12:20:06.379"/>
+<status status="PASS" starttime="20230108 13:09:14.570" endtime="20230108 13:09:16.019"/>
 </kw>
-<status status="PASS" starttime="20230108 12:20:02.744" endtime="20230108 12:20:06.379"/>
+<status status="PASS" starttime="20230108 13:09:11.288" endtime="20230108 13:09:16.019"/>
 </iter>
-<status status="PASS" starttime="20230108 12:19:55.992" endtime="20230108 12:20:06.379"/>
+<status status="PASS" starttime="20230108 13:09:03.954" endtime="20230108 13:09:16.019"/>
 </for>
-<status status="PASS" starttime="20230108 12:19:55.992" endtime="20230108 12:20:06.379"/>
+<status status="PASS" starttime="20230108 13:09:03.953" endtime="20230108 13:09:16.020"/>
 </kw>
 <kw name="Fechar navegador" library="setup_teardown" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230108 12:20:06.380" endtime="20230108 12:20:08.922"/>
+<status status="PASS" starttime="20230108 13:09:16.021" endtime="20230108 13:09:18.506"/>
 </kw>
-<status status="PASS" starttime="20230108 12:20:06.380" endtime="20230108 12:20:08.922"/>
+<status status="PASS" starttime="20230108 13:09:16.020" endtime="20230108 13:09:18.506"/>
 </kw>
 <tag>TC02 Loop</tag>
-<status status="PASS" starttime="20230108 12:19:46.090" endtime="20230108 12:20:08.922"/>
+<status status="PASS" starttime="20230108 13:08:53.789" endtime="20230108 13:09:18.506"/>
 </test>
-<status status="PASS" starttime="20230108 12:19:45.826" endtime="20230108 12:20:08.927"/>
+<test id="s1-s1-s1-t3" name="TC03 - Acessar site, fazer login, criar usuario aleatorio" line="19">
+<kw name="Acessar site orange e fazer login" library="setup_teardown" type="SETUP">
+<kw name="Dado que eu acesse o site e faça login" library="login_page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${geral.URL}</arg>
+<arg>${geral.Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230108 13:09:18.510" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<status status="PASS" starttime="20230108 13:09:18.509" endtime="20230108 13:09:23.366"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230108 13:09:23.367" endtime="20230108 13:09:23.485"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.input_username}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230108 13:09:23.485" endtime="20230108 13:09:23.803"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login.input_username}</arg>
+<arg>${dados_login.username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230108 13:09:23.804" level="INFO">Typing text 'Admin' into text field '//input[@name="username"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:23.804" endtime="20230108 13:09:23.867"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login.input_password}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230108 13:09:23.867" endtime="20230108 13:09:23.893"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login.input_password}</arg>
+<arg>${dados_login.password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230108 13:09:23.894" level="INFO">Typing text 'admin123' into text field '//input[@name="password"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:23.893" endtime="20230108 13:09:23.994"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login.button_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230108 13:09:23.996" level="INFO">Clicking button '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:23.995" endtime="20230108 13:09:24.077"/>
+</kw>
+<status status="PASS" starttime="20230108 13:09:18.509" endtime="20230108 13:09:24.077"/>
+</kw>
+<status status="PASS" starttime="20230108 13:09:18.509" endtime="20230108 13:09:24.078"/>
+</kw>
+<kw name="E eu adicione um novo usuario aleatorio" library="pim_page">
+<kw name="First Name" library="FakerLibrary">
+<var>${nome}</var>
+<msg timestamp="20230108 13:09:24.079" level="INFO">${nome} = Lindsey</msg>
+<status status="PASS" starttime="20230108 13:09:24.078" endtime="20230108 13:09:24.079"/>
+</kw>
+<kw name="Last Name Female" library="FakerLibrary">
+<var>${nome_meio}</var>
+<msg timestamp="20230108 13:09:24.080" level="INFO">${nome_meio} = Gomez</msg>
+<status status="PASS" starttime="20230108 13:09:24.079" endtime="20230108 13:09:24.080"/>
+</kw>
+<kw name="Last Name Female" library="FakerLibrary">
+<var>${sobrenome}</var>
+<msg timestamp="20230108 13:09:24.080" level="INFO">${sobrenome} = Martinez</msg>
+<status status="PASS" starttime="20230108 13:09:24.080" endtime="20230108 13:09:24.080"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${pim.button_pim}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230108 13:09:24.080" endtime="20230108 13:09:25.856"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${pim.button_pim}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230108 13:09:25.857" level="INFO">Clicking element '//a[@href="/web/index.php/pim/viewPimModule"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:25.856" endtime="20230108 13:09:27.090"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${pim.button_add}</arg>
+<arg>20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230108 13:09:27.090" endtime="20230108 13:09:27.538"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${pim.button_add}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230108 13:09:27.539" level="INFO">Clicking element '//button[@class="oxd-button oxd-button--medium oxd-button--secondary"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:27.538" endtime="20230108 13:09:28.359"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${pim.input_firstName}</arg>
+<arg>20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230108 13:09:28.359" endtime="20230108 13:09:28.811"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${pim.input_firstName}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230108 13:09:28.812" level="INFO">Typing text 'Lindsey' into text field '//input[@name="firstName"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:28.812" endtime="20230108 13:09:28.894"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${pim.input_middleName}</arg>
+<arg>${nome_meio}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230108 13:09:28.895" level="INFO">Typing text 'Gomez' into text field '//input[@name="middleName"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:28.894" endtime="20230108 13:09:28.989"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${pim.input_lastName}</arg>
+<arg>${sobrenome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230108 13:09:28.990" level="INFO">Typing text 'Martinez' into text field '//input[@name="lastName"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:28.989" endtime="20230108 13:09:29.064"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${pim.button_save}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230108 13:09:29.064" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20230108 13:09:29.064" endtime="20230108 13:09:29.665"/>
+</kw>
+<status status="PASS" starttime="20230108 13:09:24.078" endtime="20230108 13:09:29.665"/>
+</kw>
+<kw name="Fechar navegador" library="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230108 13:09:29.667" endtime="20230108 13:09:32.137"/>
+</kw>
+<status status="PASS" starttime="20230108 13:09:29.666" endtime="20230108 13:09:32.137"/>
+</kw>
+<tag>TC03 Create</tag>
+<status status="PASS" starttime="20230108 13:09:18.508" endtime="20230108 13:09:32.137"/>
+</test>
+<status status="PASS" starttime="20230108 13:08:33.697" endtime="20230108 13:09:32.142"/>
 </suite>
-<status status="PASS" starttime="20230108 12:19:45.808" endtime="20230108 12:20:08.931"/>
+<status status="PASS" starttime="20230108 13:08:33.693" endtime="20230108 13:09:32.147"/>
 </suite>
-<status status="PASS" starttime="20230108 12:19:45.790" endtime="20230108 12:20:08.932"/>
+<status status="PASS" starttime="20230108 13:08:33.667" endtime="20230108 13:09:32.148"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="1" fail="0" skip="0">TC01 Login Create Delete</stat>
 <stat pass="1" fail="0" skip="0">TC02 Loop</stat>
+<stat pass="1" fail="0" skip="0">TC03 Create</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Suites">Suites</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="addAndDelete">Suites.addAndDelete</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="addAndDelete">Suites.addAndDelete.addAndDelete</stat>
+<stat pass="3" fail="0" skip="0" id="s1" name="Suites">Suites</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1" name="addAndDelete">Suites.addAndDelete</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1-s1" name="addAndDelete">Suites.addAndDelete.addAndDelete</stat>
 </suite>
 </statistics>
 <errors>

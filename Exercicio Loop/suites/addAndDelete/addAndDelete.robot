@@ -15,3 +15,7 @@ TC02 - Acessar site, fazer login, criar 3 usuários
     Dado que eu acesse a opção PIM no menu
     E clique em "Add Employee"
     Então adiciono 3 novos usuários
+
+TC03 - Acessar site, fazer login, criar usuario aleatorio
+    [Tags]    TC03 Create
+    E eu adicione um novo usuario aleatorio
